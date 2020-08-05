@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -Wpedantic -Werror -std=c++11 $(shell pkg-config fuse3 --cflags) $( d) -I include/
+CFLAGS = -Wall -Wpedantic -Werror -std=c++11 $(shell pkg-config fuse3 --cflags)  $(shell pkg-config cuda --cflags) $( d) -I include/
 LDFLAGS = -flto $(shell pkg-config fuse3 --libs) $(shell pkg-config cuda --libs) -l OpenCL
 
 ifeq ($(DEBUG), 1)
